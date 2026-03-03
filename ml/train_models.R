@@ -116,30 +116,7 @@ results <- data.frame(
     mae(test_data$intensity, svm_pred)
   )
 )
-r2_score <- function(actual, predicted) {
-  1 - sum((actual - predicted)^2) / sum((actual - mean(actual))^2)
-}
 
-results <- data.frame(
-  Model = c("Linear Regression", "Random Forest", "SVM"),
-  RMSE = c(
-    rmse(test_data$intensity, lm_pred),
-    rmse(test_data$intensity, rf_pred),
-    rmse(test_data$intensity, svm_pred)
-  ),
-  MAE = c(
-    mae(test_data$intensity, lm_pred),
-    mae(test_data$intensity, rf_pred),
-    mae(test_data$intensity, svm_pred)
-  ),
-  R2 = c(
-    r2_score(test_data$intensity, lm_pred),
-    r2_score(test_data$intensity, rf_pred),
-    r2_score(test_data$intensity, svm_pred)
-  )
-)
-
-print(results)
 
 print(results)
 
